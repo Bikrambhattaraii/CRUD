@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Management System</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #note-form {
+        background-color: #f9f9f9;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      #note-form h2,
+      #note-list h2 {
+        margin: 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #ddd;
+      }
+
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+      }
+
+      button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        background-color: #f9f9f9;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      li h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      li p {
+        margin: 0.5rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header><%- include("component/navbar") %></header>
+    <main>
+      <section id="note-form">
+        <h2>Add a Note</h2>
+        <form action="/createNote" method="post">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required />
+          <label for="content">Content:</label>
+          <textarea id="content" name="content" rows="4" required></textarea>
+          <button type="submit">Add Note</button>
+        </form>
+      </section>
+    </main>
+    <%- include("component/footer.ejs") %>
+  </body>
+</html>

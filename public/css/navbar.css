@@ -1,0 +1,12 @@
+nav{
+    height: 10vh;
+    padding: 30px;
+    /* background-color: blue; */
+}
+a{
+    list-style: none;
+text-decoration: none;
+font-size: 2rem;
+margin-right: 70px;
+color: #fff;
+}

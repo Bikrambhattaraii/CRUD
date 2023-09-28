@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Detail</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-size: 20px;
+        margin-top: 0;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button a {
+        list-style: none;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+      .post-footer {
+        margin-top: 20px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <header><%- include("component/navbar") %></header>
+    <main>
+      <h3><%- note[0].title %></h3>
+      <p><%- note[0].content %></p>
+      <div class="post-footer">
+        Published on <%- note[0].createdAt.toISOString().slice(0,10) %>
+      </div>
+      <button><a href="/edit/<%- note[0].id %>">Edit</a></button>
+      <button><a href="/delete/<%- note[0].id %>">Delete</a></button>
+    </main>
+  </body>
+</html>
